@@ -27,6 +27,7 @@
                 <div class="col-md-4">
 
                     <ul>
+                        {{$name}}
                         @foreach($chunk as $brand)
 
                             <?php
