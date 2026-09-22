@@ -37,6 +37,10 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.footerAbout{
+    color: var(--blue);
+    text-decoration: none;
+}
 *,
 *::before,
 *::after {
@@ -73,6 +77,8 @@ footer{
     background-color: #343A40;
     color: white;
     text-align: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 hr {
     box-sizing: content-box;
@@ -10030,4 +10036,10 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 0 5px;
     color: #ccc;
     content: "/ ";
+}
+
+.copyright{
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;
 }
