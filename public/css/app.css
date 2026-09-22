@@ -69,6 +69,11 @@ body {
     outline: 0 !important;
 }
 
+footer{
+    background-color: #343A40;
+    color: white;
+    text-align: center;
+}
 hr {
     box-sizing: content-box;
     height: 0;
