@@ -23,4 +23,7 @@ return [
 'view_manual_alt' => "Bekijk direct je handleiding",
 'all_brands' => "Alle merken",
 'about' => "Over Ons",
+'contact' => "Contact Ons",
+'social' => "Social Media",
+
 ];

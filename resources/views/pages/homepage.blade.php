@@ -6,6 +6,7 @@
         <p>{{ __('introduction_texts.homepage_line_3') }}</p>
     </x-slot:introduction_text>
 
+
     <h1>
         <x-slot:title>
             {{ __('misc.all_brands') }}
