@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container">
         <div class="navbar-header mr-auto">
-            <button><a class="navbar-brand" href="/" title="{{ __('misc.home_alt') }}">{{ __('misc.homepage_title') }}</a></button>
+            <a class="btn btn-primary navbar-btn" href="/" title="{{ __('misc.home_alt') }}"> {{ __('misc.homepage_title') }}</a>
         </div>
         <div id="navbar" class="form-inline">
 
