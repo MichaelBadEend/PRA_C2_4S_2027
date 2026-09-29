@@ -1,6 +1,7 @@
 
 <footer>
     <br>
+    <a class="footerAbout" href="/form">Contact Formulier</a><br><br>
     <a class="footerAbout" href="{{ __('misc.about') }}">{{ __('misc.about') }}</a><br><br>
 
     <div class="copyright">© {{ __('misc.copyright') }}</div>
