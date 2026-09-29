@@ -23,5 +23,6 @@ return [
 'view_manual_alt' => "Directly view your manual",
 'all_brands' => "All brands",
 'top_brands' => "Top 10 most populair manuals",
+'top_5_popular_manuals' => "Top 5 most popular manuals",
 
 ];

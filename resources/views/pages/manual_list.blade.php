@@ -13,6 +13,14 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
+    <h2>{{ __('misc.top_5_popular_manuals') }}</h2>
+    <ol>
+        @foreach ($popularManuals as $manual)
+            <li>
+                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">{{ $manual->name }}</a>
+            </li>
+        @endforeach
+    </ol>
 
         @foreach ($manuals as $manual)
 

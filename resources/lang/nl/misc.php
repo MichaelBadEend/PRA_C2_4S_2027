@@ -23,6 +23,7 @@ return [
 'view_manual_alt' => "Bekijk direct je handleiding",
 'all_brands' => "Alle merken",
 'top_brands' => "Top 10 populairste handleidingen",
+'top_5_popular_manuals' => "Top 5 populairste handleidingen",
 'about' => "Over Ons",
 'contact' => "Contact Ons",
 'social' => "Social Media",
