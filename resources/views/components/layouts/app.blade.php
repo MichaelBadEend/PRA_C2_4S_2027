@@ -16,6 +16,17 @@
                        alt="{{ __('misc.top_brands') }}">{{ __('misc.top_brands') }}</a></li>
                 {{ $breadcrumb ?? '' }}
             </ul>
+
+            @if(isset($popularManuals) && $popularManuals->count())
+                <div class="popular-manuals">
+                    <ul>
+                        @foreach($popularManuals as $manual)
+                            <li>{{ $manual->brand->name }}: {{ $manual->name }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.home_alt') }}"
                        alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
