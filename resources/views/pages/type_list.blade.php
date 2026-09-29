@@ -8,14 +8,16 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-        <div class="container">
-            <ul>
-            @foreach($types as $type)
-                <li>
-                    <a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/{{ $type->id }}/{{ $type->name_url_encoded }}/">{{ $type->name }}</a>
-                </li>
-            @endforeach
-            </ul>
-        </div>
+    <div class="row">
+        @foreach($types as $type)
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="product-name">
+                    <a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/{{ $type->id }}/{{ $type->name_url_encoded }}/">
+                        {{ $type->name }}
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
 </x-layouts.app>
