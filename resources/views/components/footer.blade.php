@@ -3,7 +3,7 @@
     <br>
     <div class="footerBox">
         <p class="footerSocial">{{ __('misc.social') }}</p>
-        <p class="footerContact">{{ __('misc.contact') }}</p>
+        <a class="footerContact" href="/form">{{ __('misc.contact') }}</a><br><br>
         <a class="footerAbout" href="{{ __('misc.about') }}">{{ __('misc.about') }}</a>
     </div>
 

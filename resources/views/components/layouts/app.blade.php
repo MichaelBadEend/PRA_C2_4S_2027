@@ -12,6 +12,11 @@
         <div class="col-md-12">
             <x-header/>
             <ul class="breadcrumb">
+                <li><a href="/" title="{{ __('misc.top_brands') }}"
+                       alt="{{ __('misc.top_brands') }}">{{ __('misc.top_brands') }}</a></li>
+                {{ $breadcrumb ?? '' }}
+            </ul>
+            <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.home_alt') }}"
                        alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
                 {{ $breadcrumb ?? '' }}

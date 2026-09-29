@@ -2,6 +2,7 @@
     <div class="container">
         <div class="navbar-header mr-auto">
             <a class="btn btn-primary navbar-btn" href="/" title="{{ __('misc.home_alt') }}"> {{ __('misc.homepage_title') }}</a>
+            <a class="btn btn-primary navbar-btn" href="/form">Contact Formulier</a>
         </div>
         <div id="navbar" class="form-inline">
 
