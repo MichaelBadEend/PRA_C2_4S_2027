@@ -22,5 +22,9 @@ return [
 'view_manual' => "Bekijk direct je handleiding",
 'view_manual_alt' => "Bekijk direct je handleiding",
 'all_brands' => "Alle merken",
+'top_brands' => "Top 10 populairste handleidingen",
 'about' => "Over Ons",
+'contact' => "Contact Ons",
+'social' => "Social Media",
+
 ];
