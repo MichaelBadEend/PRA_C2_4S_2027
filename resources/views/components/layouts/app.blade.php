@@ -21,7 +21,7 @@
 
             @if(isset($popularManuals) && $popularManuals->count())
                 <div class="popular-manuals">
-                    <ul>
+                    <ul style="list-style: none;">
                         @foreach($popularManuals as $manual)
                             <li><strong>{{ $loop->iteration }}.</strong> {{ $manual->brand->name }}: {{ $manual->name }}</li>
                         @endforeach
