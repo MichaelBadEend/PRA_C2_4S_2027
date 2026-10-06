@@ -21,7 +21,7 @@
                 <div class="popular-manuals">
                     <ul>
                         @foreach($popularManuals as $manual)
-                            <li>{{ $manual->brand->name }}: {{ $manual->name }}</li>
+                            <li><strong>{{ $loop->iteration }}.</strong> {{ $manual->brand->name }}: {{ $manual->name }}</li>
                         @endforeach
                     </ul>
                 </div>
