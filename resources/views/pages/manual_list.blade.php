@@ -13,14 +13,16 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-    <h2>{{ __('misc.top_5_popular_manuals') }}</h2>
-    <ol>
+    <ul class="breadcrumb">
+        <h2>{{ __('misc.top_5_popular_manuals') }}</h2>
+    </ul>
+    <ul class="top5manuals" style="list-style: none;">
         @foreach ($popularManuals as $manual)
             <li>
-                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">{{ $manual->name }}</a>
+                {{ $loop->iteration }}. <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">{{ $manual->name }}</a>
             </li>
         @endforeach
-    </ol>
+    </ul>
 
         @foreach ($manuals as $manual)
 
