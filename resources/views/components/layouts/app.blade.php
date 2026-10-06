@@ -11,11 +11,13 @@
     <div class="row">
         <div class="col-md-12">
             <x-header/>
+            @if(request()->path() === '/')
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.top_brands') }}"
                        alt="{{ __('misc.top_brands') }}">{{ __('misc.top_brands') }}</a></li>
                 {{ $breadcrumb ?? '' }}
             </ul>
+            @endif
 
             @if(isset($popularManuals) && $popularManuals->count())
                 <div class="popular-manuals">
