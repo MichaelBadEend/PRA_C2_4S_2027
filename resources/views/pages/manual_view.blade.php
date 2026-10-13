@@ -12,6 +12,13 @@
 
     <h1>{{ $brand->name }} - {{ $manual->name }}</h1>
 
+
+    <form action="{{ route('manuals.destroy', $manual) }}" method="POST" onsubmit="return confirm('Verwijder deze handleiding?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit">🗑️Verwijder handleiding</button>
+    </form>
+
     @if ($manual->locally_available)
         <iframe src="{{ $manual->url }}" width="780" height="600" frameborder="0" marginheight="0" marginwidth="0">
         Iframes are not supported<br />

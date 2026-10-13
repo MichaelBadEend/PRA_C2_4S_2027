@@ -20,4 +20,13 @@ class ManualController extends Controller
             "brand" => $brand,
         ]);
     }
+
+    public function destroy(Manual $manual)
+    {
+        $brand = $manual->brand;
+
+        $manual->delete();
+
+        return redirect()->route('home') -> with('success', 'Handleiding Verwijderd.');
+    }
 }

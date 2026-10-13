@@ -47,7 +47,10 @@ Route::get('/form', function () {
     return view('pages.form');
 });
 
+Route::delete('/manuals/{manual}', [ManualController::class, 'destroy'])->name('manuals.destroy');
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
+
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
