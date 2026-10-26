@@ -9,6 +9,8 @@ class Brand extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function manuals()
     {
         return $this->hasMany(Manual::class);

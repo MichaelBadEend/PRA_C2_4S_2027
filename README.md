@@ -29,6 +29,9 @@ Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Geb
 10. Run in cmd `npm run dev`
 11. Ga naar 4s_manuals.test
 
+### Tests draaien
+
+De tests gebruiken de MySQL-database die in je lokale `.env` is ingesteld. Featuretests die records aanmaken gebruiken transacties en draaien die na afloop terug. Gebruik geen `RefreshDatabase`-trait of test die migrations uitvoert: dat kan gedeelde tabellen wissen. Zorg dat de migrations eerst zijn uitgevoerd.
 
 
 ## Uitleg mappen en bestanden

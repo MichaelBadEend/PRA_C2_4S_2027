@@ -47,6 +47,12 @@ Route::get('/form', function () {
     return view('pages.form');
 });
 
+Route::get('/admin', function () {
+    return redirect()->route('admin.manuals.create');
+});
+
+Route::get('/admin/manuals/create', [ManualController::class, 'create'])->name('admin.manuals.create');
+Route::post('/admin/manuals', [ManualController::class, 'store'])->name('manuals.store');
 Route::delete('/manuals/{manual}', [ManualController::class, 'destroy'])->name('manuals.destroy');
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);

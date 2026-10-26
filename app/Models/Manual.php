@@ -9,6 +9,16 @@ class Manual extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'brand_id',
+        'name',
+        'filesize',
+        'originUrl',
+        'filename',
+        'downloadedServer',
+        'counter',
+    ];
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
