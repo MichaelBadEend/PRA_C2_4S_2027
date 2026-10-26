@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <x-header/>
+            <x-header>{{ $introduction_text ?? '' }}</x-header>
             @if(request()->path() === '/')
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.top_brands') }}"

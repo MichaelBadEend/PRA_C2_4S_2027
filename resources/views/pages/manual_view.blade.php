@@ -12,6 +12,10 @@
 
     <h1>{{ $brand->name }} - {{ $manual->name }}</h1>
 
+    <p>
+        Deelbare link:
+        <a href="{{ route('manuals.short', $manual->short_code) }}">{{ url(route('manuals.short', $manual->short_code, false)) }}</a>
+    </p>
 
     <form action="{{ route('manuals.destroy', $manual) }}" method="POST" onsubmit="return confirm('Verwijder deze handleiding?')">
     @csrf

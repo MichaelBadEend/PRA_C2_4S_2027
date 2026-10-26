@@ -55,6 +55,8 @@ Route::get('/admin/manuals/create', [ManualController::class, 'create'])->name('
 Route::post('/admin/manuals', [ManualController::class, 'store'])->name('manuals.store');
 Route::delete('/manuals/{manual}', [ManualController::class, 'destroy'])->name('manuals.destroy');
 
+Route::get('/link/{shortCode}', [ManualController::class, 'redirectShortLink'])->name('manuals.short');
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
@@ -68,7 +70,7 @@ Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
 // Detail page for a manual
-Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
+Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show'])->name('manual.show');
 
 // Generate sitemaps
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);

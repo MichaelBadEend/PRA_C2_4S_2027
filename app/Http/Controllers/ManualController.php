@@ -39,12 +39,24 @@ class ManualController extends Controller
     {
         $brand = Brand::findOrFail($brand_id);
         $manual = Manual::findOrFail($manual_id);
+        $manual->ensureShortCode();
 
         $manual->increment("counter");
 
         return view('pages/manual_view', [
             "manual" => $manual,
             "brand" => $brand,
+        ]);
+    }
+
+    public function redirectShortLink(string $shortCode)
+    {
+        $manual = Manual::with('brand')->where('short_code', $shortCode)->firstOrFail();
+
+        return redirect()->route('manual.show', [
+            'brand_id' => $manual->brand->id,
+            'brand_slug' => $manual->brand->name_url_encoded,
+            'manual_id' => $manual->id,
         ]);
     }
 

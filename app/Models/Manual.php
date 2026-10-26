@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Manual extends Model
 {
@@ -22,6 +23,20 @@ class Manual extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function ensureShortCode(): void
+    {
+        if ($this->short_code !== null) {
+            return;
+        }
+
+        do {
+            $shortCode = Str::lower(Str::random(4));
+        } while (self::where('short_code', $shortCode)->exists());
+
+        $this->short_code = $shortCode;
+        $this->save();
     }
 
     // Returns the filesize in a human readable format

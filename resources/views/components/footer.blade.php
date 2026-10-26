@@ -9,9 +9,9 @@
 
     <div class="footerBoxInfo">
         <div class="footerSocialImg">
-            <a href="twitter"><img src="img/twitter.png">{{ __() }}</a>
-            <a href="instagram"><img src="img/instagram.png">{{ __() }}</a>
-            <a href="facebook"><img src="img/facebook.png">{{ __() }}</a>
+            <a href="twitter"><img src="{{ asset('img/twitter.png') }}" alt="Twitter">{{ __() }}</a>
+            <a href="instagram"><img src="{{ asset('img/instagram.png') }}" alt="Instagram">{{ __() }}</a>
+            <a href="facebook"><img src="{{ asset('img/facebook.png') }}" alt="Facebook">{{ __() }}</a>
         </div>
 
         <div class="footerContact">

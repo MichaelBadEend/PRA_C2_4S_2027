@@ -79,4 +79,33 @@ class ManualStoreTest extends TestCase
 
         $this->assertDatabaseMissing('manuals', ['id' => $manual->id]);
     }
+
+    public function test_manual_page_shows_a_persistent_four_character_short_link(): void
+    {
+        $brand = Brand::create(['name' => 'Test Brand ' . uniqid()]);
+        $manual = Manual::create([
+            'brand_id' => $brand->id,
+            'name' => 'Test Manual ' . uniqid(),
+            'filesize' => 2048,
+            'originUrl' => 'https://example.com/manual.pdf',
+            'counter' => 0,
+        ]);
+        $manualPath = route('manual.show', [
+            'brand_id' => $brand->id,
+            'brand_slug' => $brand->name_url_encoded,
+            'manual_id' => $manual->id,
+        ], false);
+
+        $this->get($manualPath)->assertOk();
+
+        $shortCode = $manual->fresh()->short_code;
+        $this->assertMatchesRegularExpression('/^[a-z0-9]{4}$/', $shortCode);
+
+        $this->get($manualPath)
+            ->assertOk()
+            ->assertSee(route('manuals.short', $shortCode), false);
+
+        $this->get(route('manuals.short', $shortCode))
+            ->assertRedirect($manualPath);
+    }
 }

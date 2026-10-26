@@ -14,6 +14,10 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertOk()
+            ->assertSee('src="' . asset('img/afbI_logo.png') . '"', false)
+            ->assertSee('src="' . asset('img/twitter.png') . '"', false)
+            ->assertSee('src="' . asset('img/instagram.png') . '"', false)
+            ->assertSee('src="' . asset('img/facebook.png') . '"', false);
     }
 }
